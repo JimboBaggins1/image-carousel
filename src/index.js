@@ -96,3 +96,23 @@ function prevImg(currentImage) {
     prevDot.classList.add("active");
     return currentPos = currentImage;
 }
+
+// move to selected image
+function selectedImg(selected) {
+    ClearClass("active");
+    const dotToMoveTo = document.getElementById(selected);
+    const id = dotToMoveTo.dataset.id;
+    const imageToMoveTo = document.getElementById(id);
+
+    dotToMoveTo.classList.add("active");
+    imageToMoveTo.classList.add("active");
+    return currentPos = parseInt(id);
+}
+
+// clears class from all elems
+function ClearClass(className) {
+    const classArr = document.querySelectorAll(`.${className}`);
+    classArr.forEach(elem => {
+        elem.classList.remove(className);
+    })
+}
