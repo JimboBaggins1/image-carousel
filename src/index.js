@@ -59,3 +59,40 @@ leftArrow.classList.add("prev")
 
 frame.appendChild(rightArrow);
 frame.appendChild(leftArrow);
+
+let currentPos = 0;
+
+// move to next image
+function nextImg(currentImage) {
+    console.log(currentImage);
+    ClearClass("active");
+    if (currentImage === imgArr.length - 1) {
+        currentImage = 0;
+    } else {
+        currentImage += 1;
+    }
+    const current = document.getElementById(currentImage);
+    console.log(currentImage);
+    console.log(current);
+    current.classList.add("active");
+    const currentDot = document.querySelector(`[data-id='${currentImage}']`);
+    currentDot.classList.add("active");
+    currentPos = currentImage;
+    console.log(currentPos)
+    return currentPos;
+}
+
+// move to previous image
+function prevImg(currentImage) {
+    ClearClass("active");
+    if (currentImage === 0) {
+        currentImage = imgArr.length - 1;
+    } else {
+        currentImage -= 1;
+    }
+    const prev = document.getElementById(currentImage);
+    prev.classList.add("active");
+    const prevDot = document.getElementById(`dot-${currentImage}`);
+    prevDot.classList.add("active");
+    return currentPos = currentImage;
+}
