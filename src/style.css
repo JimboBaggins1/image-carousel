@@ -1,0 +1,67 @@
+:root {
+    --frame-height: 600px;
+}
+
+.frame {
+    padding: 0;
+    position: relative;
+    width: 600px;
+    height: var(--frame-height);
+    border: 2px solid black;
+    margin: auto;
+}
+
+.image {
+    display: none;
+    width: 100%;
+}
+
+
+
+.next,
+.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px;
+}
+
+.next:hover,
+.prev:hover {
+    background-color: rgb(105, 105, 105, 0.2);
+}
+
+.next {
+    right: 0;
+}
+
+.prev {
+    left: 0;
+}
+
+.dots {
+    position: absolute;
+    bottom: 5%;
+    width: 50%;
+    transform: translateX(50%);
+    height: 14px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dots * {
+    height: 100%;
+    width: 14px;
+    border-radius: 50%;
+    background-color: rgb(156, 163, 175);
+    opacity: 0.6;
+}
+
+.dots *:hover {
+    opacity: 1;
+}
+
+.active {
+    display: block;
+    opacity: 1;
+}
