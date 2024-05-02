@@ -45,3 +45,17 @@ imgArr.forEach((image, index) => {
     navDotsContainer.appendChild(navDot);
     frame.appendChild(navDotsContainer);
 })
+
+// navigation arrows
+const rightArrow = new Image();
+rightArrow.src = rArrow;
+rightArrow.setAttribute("height", "24");
+rightArrow.classList.add("next");
+
+const leftArrow = new Image();
+leftArrow.src = lArrow;
+leftArrow.setAttribute("height", "24");
+leftArrow.classList.add("prev")
+
+frame.appendChild(rightArrow);
+frame.appendChild(leftArrow);
