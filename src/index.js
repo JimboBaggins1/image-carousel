@@ -116,3 +116,17 @@ function ClearClass(className) {
         elem.classList.remove(className);
     })
 }
+
+document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target.matches('.next')) {
+        nextImg(currentPos);
+    } else if (target.matches('.prev')) {
+        prevImg(currentPos);
+    } else if (target.matches('.nav-dot')) {
+        selectedImg(target.id);
+    }
+})
+
+// move to next image every 5 seconds
+setInterval(() => nextImg(currentPos), 5000);
